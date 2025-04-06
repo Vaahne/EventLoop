@@ -4,14 +4,14 @@ const primeDiv = document.querySelector(".primeDiv");
 var counter = 0;
 function recursive(){
     counter ++;
-    // console.log(counter);  
     recursive();
 }
 try{
     recursive();
 
 }catch(e){
-    console.error(e.message," counter Value: ",counter);
+    console.log(counter);
+    console.log(e)
 }
 
 // ************************ PART 2 ************************
@@ -62,7 +62,6 @@ function renderPrime(){
     if(isPrime(startsAt)){
         primeDiv.textContent += startsAt + " ,";
         primeNums.push(startsAt);
-        console.log(startsAt);
     }
     startsAt ++;
     setTimeout(renderPrime,0);
